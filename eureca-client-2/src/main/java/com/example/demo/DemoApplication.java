@@ -14,23 +14,7 @@ import org.springframework.web.client.RestTemplate;
 
 @EnableEurekaClient
 @SpringBootApplication
-@RestController
 public class DemoApplication {
-	@Autowired
-	private RestTemplate restTemplate;
-
-	@Bean
-	public RestTemplate getRestTemplate() {
-		return new RestTemplate();
-	}
-
-	@RequestMapping("/")
-	public String home() throws JSONException {
-		JSONObject jsonObject = new JSONObject();
-		jsonObject.put("message", "Hello World 2");
-		return jsonObject.toString();
-	}
-
 
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
